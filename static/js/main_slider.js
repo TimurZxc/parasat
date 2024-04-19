@@ -27,3 +27,46 @@ function showSlides(n) {
   dots[slideIndex-1].className += " active";
   
 }
+
+document.addEventListener("DOMContentLoaded", function() {
+  const divs = document.querySelectorAll('.ratioDiv'); // Select all divs with the class 'ratioDiv'
+
+  function adjustHeight() {
+      const screenWidth = window.innerWidth;           // Get the current width of the screen
+      const targetHeight = (screenWidth * 1.5) / 3.6;    // Calculate the height with the ratio 2:1.5
+
+      divs.forEach(div => {
+          div.style.height = `${targetHeight}px`;     // Set the new height for each div
+      });
+  }
+
+  adjustHeight(); // Call once on initial load
+  window.addEventListener('resize', adjustHeight);    // Adjust height on every window resize
+});
+
+
+
+document.querySelectorAll('.videoTrigger').forEach(trigger => {
+  trigger.addEventListener('click', function() {
+      const videoId = this.getAttribute('data-video-id');
+      const popup = document.getElementById('videoPopup');
+      const frame = document.getElementById('videoFrame');
+      frame.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+      popup.style.display = 'flex';
+  });
+});
+
+document.getElementById('videoPopup').addEventListener('click', function(event) {
+  if (event.target === this) {
+      closePopup();
+  }
+});
+
+function closePopup() {
+  const popup = document.getElementById('videoPopup');
+  const frame = document.getElementById('videoFrame');
+  popup.style.display = 'none';
+  frame.src = ""; // Stop video playback
+}
+
+

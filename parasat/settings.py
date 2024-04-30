@@ -28,6 +28,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django_cleanup.apps.CleanupConfig',
     'core',
+    'django_ckeditor_5',
 ]
 
 MIDDLEWARE = [
@@ -90,6 +91,7 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
+
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
@@ -100,6 +102,7 @@ TIME_ZONE = 'Asia/Karachi'
 USE_I18N = True
 
 USE_TZ = True
+
 
 
 # Static files (CSS, JavaScript, Images)
@@ -118,3 +121,46 @@ TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+customColorPalette = [
+    {
+        'color': 'hsl(4, 90%, 58%)',
+        'label': 'Red'
+    },
+    {
+        'color': 'hsl(340, 82%, 52%)',
+        'label': 'Pink'
+    },
+    {
+        'color': 'hsl(291, 64%, 42%)',
+        'label': 'Purple'
+    },
+    {
+        'color': 'hsl(262, 52%, 47%)',
+        'label': 'Deep Purple'
+    },
+    {
+        'color': 'hsl(231, 48%, 48%)',
+        'label': 'Indigo'
+    },
+    {
+        'color': 'hsl(207, 90%, 54%)',
+        'label': 'Blue'
+    },
+]
+
+CKEDITOR_5_CONFIGS = {
+    'default': {
+        'toolbar': ['undo', 'redo',
+            '|', 'heading',
+            '|', 'fontfamily', 'fontsize', 'fontColor', 'fontBackgroundColor',
+            '|', 'bold', 'italic', 'strikethrough', 'subscript', 'superscript', 'code',
+            '|', 'link', 'uploadImage', 'blockQuote', 'codeBlock',
+            '|', 'alignment',
+            '|', 'bulletedList', 'numberedList', 'todoList', 'outdent', 'indent'],
+        'shouldNotGroupWhenFull': True,
+        'language': 'ru',
+    },
+}
+CKEDITOR_5_CUSTOM_CSS = 'css/ckeditor5/admin_dark_mode_fix.css'

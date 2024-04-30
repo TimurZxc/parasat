@@ -75,15 +75,15 @@
         {% for news in news_list %}
         <div class="main-block-news-item">
             <div>
-                <img src="{{ news.image.url }}" alt="">
+                <a href="{% url 'news' news.id %}"><img src="{{ news.image.url }}" alt=""></a>
             </div>
             <div class="news-info">
-                <h3>{{ news.title }}</h3>
-                <p>{{ news.text|truncate:750 }}</p>
+                <a href="{% url 'news' news.id %}"><h3>{{ news.title }}</h3></a>
+                <p>{{ news.text|truncate:750|safe}}</p>
             </div>
         </div>
         {% endfor %}
     </div>
-    <button style="margin-top: 50px;" class="button-default">Посмотреть все новости</button>
+    <a href="{% url 'all_news' %}"><button style="margin-top: 50px;" class="button-default">Посмотреть все новости</button></a>
 </div>
 {% endblock %}

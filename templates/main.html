@@ -39,11 +39,10 @@
 <div class="main-block-2">
     <div class="main-block-2-left">
         <h2>О нас</h2>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet tempore temporibus, voluptatem deserunt
-            voluptatum eaque illo a excepturi repellat obcaecati laudantium laborum expedita quibusdam, inventore
-            consectetur pariatur! Perferendis non repudiandae doloribus alias voluptatibus, sapiente sit odio culpa ut
-            impedit magnam!</p>
-        <button>Подробнее о нас</button>
+        <p>Содействие в создании благоприятных правовых и
+            экономических условий для индустриального
+            развития Республики Казахстан</p>
+        <a href="{% url 'about_us' %}"><button>Подробнее о нас</button></a>
     </div>
     <div class="main-block-2-right">
         <img src="{% static 'main_images/image_2024-04-18_19-10-01.png' %}" alt="">
@@ -78,12 +77,15 @@
                 <a href="{% url 'news' news.id %}"><img src="{{ news.image.url }}" alt=""></a>
             </div>
             <div class="news-info">
-                <a href="{% url 'news' news.id %}"><h3>{{ news.title }}</h3></a>
+                <a href="{% url 'news' news.id %}">
+                    <h3>{{ news.title }}</h3>
+                </a>
                 <p>{{ news.text|truncate:750|safe}}</p>
             </div>
         </div>
         {% endfor %}
     </div>
-    <a href="{% url 'all_news' %}"><button style="margin-top: 50px;" class="button-default">Посмотреть все новости</button></a>
+    <a href="{% url 'all_news' %}"><button style="margin-top: 50px;" class="button-default">Посмотреть все
+            новости</button></a>
 </div>
 {% endblock %}

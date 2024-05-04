@@ -22,11 +22,17 @@
             <a href="{% url 'main' %}"><h1>LOGO</h1></a>
         </div>
         <div class="nav-links">
-            <a href="#">link 1</a>
-            <a href="#">link 2</a>
-            <a href="#">link 3</a>
-            <a href="#">link 4</a>
-            <a href="#">link 5</a>
+            <a href='{% url "about_us" %}'>О нас</a>
+            <a href="#">Координационный совет и его члены</a>
+            <a href="#">Заседания координационного совета</a>
+            <a href="#">Новости</a>
+            <a href="#">Структура</a>
+            <a href="#">Комитеты</a>
+            <a href="#">Проектные офисы</a>
+            <a href="#">Список членов</a>
+            <a href="#">Протокола и решения</a>
+            <a href="#">Информация</a>
+            <a href="#">Контакты</a>
         </div>
     </nav>
     <main class="container">{% block content %} {% endblock %}</main>

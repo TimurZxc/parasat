@@ -58,6 +58,10 @@ class NewsView(generic.DetailView):
             context = self.get_context_data()
             context['comment_form'] = comment_form
             return self.render_to_response(context)
+        
+
+class AboutUsView(generic.TemplateView):
+    template_name = 'about_us.html'
 
     
 

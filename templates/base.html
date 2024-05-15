@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <script src="https://kit.fontawesome.com/2108575a2f.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
@@ -19,20 +19,26 @@
 <body>
     <nav>
         <div class="logo">
-            <a href="{% url 'main' %}"><h1>LOGO</h1></a>
+            <a href="{% url 'main' %}">
+                <h1>LOGO</h1>
+            </a>
         </div>
         <div class="nav-links">
-            <a href='{% url "about_us" %}'>О нас</a>
-            <!-- <a href="#">Координационный совет и его члены</a>
-            <a href="#">Заседания координационного совета</a>
+            <div class="dropdown">
+                <a class="dropbtn" href='{% url "about_us" %}'>О нас</a>
+                <div class="dropdown-content">
+                    <a href='{% url "about_us" %}#coordination'>Координационный совет и его члены</a>
+                    <a href="{% url 'about_us' %}#structure">Структура</a>
+                    <a href="{% url 'about_us' %}#offices">Проектные офисы</a>
+                </div>
+            </div>
+            <!-- <a href="#">Заседания координационного совета</a> -->
             <a href="#">Новости</a>
-            <a href="#">Структура</a>
-            <a href="#">Комитеты</a>
-            <a href="#">Проектные офисы</a>
-            <a href="#">Список членов</a>
-            <a href="#">Протокола и решения</a>
-            <a href="#">Информация</a>
-            <a href="#">Контакты</a> -->
+            <!-- <a href="#">Комитеты</a> -->
+            <!-- <a href="#">Список членов</a> -->
+            <!-- <a href="#">Протокола и решения</a> -->
+            <!-- <a href="#">Информация</a> -->
+            <!-- <a href="#">Контакты</a> -->
         </div>
     </nav>
     <main class="container">{% block content %} {% endblock %}</main>

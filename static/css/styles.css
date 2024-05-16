@@ -218,7 +218,16 @@ nav a:hover {
 .main-block-2-left p {
     font-size: 20px;
 }
-
+.map-container{
+    width: 100%;
+    border-bottom: solid 78px #00777f;
+}
+.map-container h2{
+    text-align: center;
+    background-color: #00777f;
+    padding: 25px;
+    color: white;
+}
 .main-block-2-left button {
     width: fit-content;
     padding: 10px;
